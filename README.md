@@ -13,7 +13,7 @@ sudo unmask sys-kernel/cachyos-sources
 adds:
 
 ```text
-=sys-kernel/cachyos-sources ~amd64
+sys-kernel/cachyos-sources ~amd64
 ```
 
 to one of these locations:
