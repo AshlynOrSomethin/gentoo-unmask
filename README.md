@@ -1,6 +1,9 @@
 # unmask
 
-Tiny Gentoo helper that appends a `~amd64` keyword entry for a package atom.
+Small Gentoo helper repo with two commands:
+
+- `unmask` appends a `~amd64` keyword entry for a package atom.
+- `emergex` runs `emerge` with autounmask enabled, then runs `etc-update --automode -5`.
 
 ## Behavior
 
@@ -25,7 +28,7 @@ The category part before the slash is used as the file name when Gentoo is confi
 
 ## Overlay setup
 
-This repository now contains a minimal local overlay for `app-portage/unmask`.
+This repository now contains a minimal local overlay for `app-portage/unmask` and `app-portage/emergex`.
 
 Add it as a repository:
 
@@ -49,6 +52,25 @@ After that, use it normally:
 
 ```bash
 sudo unmask sys-kernel/cachyos-sources
+```
+
+To install the wrapper that auto-writes USE changes and auto-merges trivial config updates:
+
+```bash
+sudo emerge --ask app-portage/emergex
+```
+
+Then use it like this:
+
+```bash
+emergex -av cachyos-sources
+```
+
+`emergex` internally runs:
+
+```bash
+sudo emerge --autounmask-write --autounmask-continue ...
+sudo etc-update --automode -5
 ```
 
 ## Test without touching `/etc`
