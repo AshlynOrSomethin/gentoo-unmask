@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>maintainer-needed@gentoo.org</email>
+    <name>Maintainer Needed</name>
+  </maintainer>
+  <longdescription>
+    Installs a small helper that appends ~amd64 keyword entries to
+    /etc/portage/package.accept_keywords for a given package atom.
+  </longdescription>
+</pkgmetadata>
