@@ -73,6 +73,10 @@ sudo emerge --autounmask-write --autounmask-continue ...
 sudo etc-update --automode -5
 ```
 
+If emerge fails because a package is masked by the `~amd64` keyword,
+`emergex` reads the masked package suggestions, runs `unmask` for those
+atoms automatically, and retries the emerge command once.
+
 ## Test without touching `/etc`
 
 ```bash
